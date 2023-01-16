@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="Nemanja Mikic">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,21 +23,45 @@
       </nav>
     </header>
     <main>
-    <form class="card">
-        <h2>Please select your topics</h2>
+      <div class="card">
+        <h2>Please select your topics*</h2>
         <div class="topics-container">
-            <div class="topic">Music</div>
-            <div class="topic">History</div>
-            <div class="topic">Geography</div>
-            <div class="topic">Science</div>
+          <div class="topic">Music</div>
+          <div class="topic">History</div>
+          <div class="topic">Geography</div>
+          <div class="topic">Science</div>
         </div>
-    </form>
-    <!-- <div class="spacer layer1"></div> -->
-    <div class="wave2">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        <h2>Select dificulty level</h2>
+        <div class="dificulty-container">
+          <div class="dificulty-seetting setting-active">
+            <figure class="smiley easy"></figure>
+            <span>Easy</span>
+          </div>
+          <div class="dificulty-seetting">
+            <figure class="smiley medium"></figure>
+            <span>Medium</span>
+          </div>
+          <div class="dificulty-seetting">
+            <figure class="smiley hard"></figure>
+            <span>Hard</span>
+          </div>
+        </div>
+        <button id="submit" class="btn btn-big">Play!</button>
+      </div>
+      <div class="wave2">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
         </svg>
-    </div>
-</main>
+      </div>
+    </main>
+    <script src="./js/index.js"></script>
   </body>
 </html>

@@ -74,7 +74,7 @@ main {
   padding: 4px 12px;
   color: #fff;
   font-size: 24px;
-  height: 62px;
+  min-height: 74px;
   transition: all 0.12s ease-in-out;
 }
 
@@ -87,4 +87,14 @@ main {
 .answer:active {
   background-color: #202122;
   box-shadow: 0 0 50px 15px var(--answer-active-shadow);
+}
+
+.correct, .correct:hover {
+  background-color: #51cf66;
+  box-shadow: 0 0 50px 15px rgba(81, 207, 102, 0.5);
+}
+
+.incorrect, .incorrect:hover {
+  background-color: #fa5252 !important;
+  box-shadow: 0 0 50px 15px rgba(250, 82, 82, 0.5) !important;
 }

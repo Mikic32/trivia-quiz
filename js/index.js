@@ -33,9 +33,7 @@ const onSubmit = () => {
 
 topics.forEach((topic) => {
   topic.addEventListener("click", function () {
-    this.classList.contains("topic-checked")
-      ? this.classList.remove("topic-checked")
-      : this.classList.add("topic-checked");
+    this.classList.toggle("topic-checked")
   });
 });
 

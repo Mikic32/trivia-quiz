@@ -14,6 +14,10 @@ body {
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
 }
 
+.d-none {
+  display: none !important;
+}
+
 .card {
   background-color: #2a2a2a;
   border-radius: 25px;
@@ -24,6 +28,20 @@ body {
   box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.score-card {
+  background-color: #2a2a2a;
+  color: #fff;
+  border-radius: 25px;
+  position: relative;
+  aspect-ratio: 3/4;
+  min-width: 500px;
+  padding: 24px;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
   align-items: center;
   flex-direction: column;
 }
@@ -90,12 +108,14 @@ main {
   box-shadow: 0 0 50px 15px var(--answer-active-shadow);
 }
 
-.correct, .correct:hover {
+.correct,
+.correct:hover {
   background-color: #51cf66;
   box-shadow: 0 0 50px 15px rgba(81, 207, 102, 0.5);
 }
 
-.incorrect, .incorrect:hover {
+.incorrect,
+.incorrect:hover {
   background-color: #fa5252 !important;
   box-shadow: 0 0 50px 15px rgba(250, 82, 82, 0.5) !important;
 }
@@ -149,4 +169,99 @@ main {
   justify-content: center;
   font-size: 48px;
   color: #fff;
+}
+
+.score-card > h1 {
+  margin-bottom: 48px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 20px;
+}
+
+.quizInfo {
+  width: 100%;
+}
+
+#overall {
+  font-size: 24px;
+  /* / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / */
+}
+
+.overall {
+  margin-bottom: 32px;
+  /* 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 */
+}
+
+#confirm {
+  background-color: #2a9d8f;
+  color: #fff;
+  width: calc(100% - 48px);
+  border: none;
+  border-radius: 50px;
+  padding: 8px 12px;
+  font-size: 24px;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.15);
+  position: absolute;
+  bottom: 24px;
+}
+
+#confirm:hover {
+  cursor: pointer;
+  background-color: #55b1a5;
+}
+
+#confirm:active {
+  background-color: #227e72;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  body {
+    background-image: none !important;
+    width: 100%;
+    height: 100%;
+  }
+
+  .card {
+    width: 100%;
+    min-width: 0;
+    border-radius: 0;
+    height: 100%;
+  }
+
+  .question-container {
+    width: 100%;
+    min-width: 0;
+    padding: 16px;
+  }
+
+  .question-container > h1 {
+    font-size: 24px;
+    /* 0 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / */
+  }
+
+  .solutions-container > * {
+    flex: 0 0 100%;
+  }
+
+  .answer {
+    font-size: 20px;
+    min-height: 60px;
+  }
+
+  .base-timer {
+    width: 200px;
+    height: 200px;
+  }
+
+  .base-timer__label {
+    width: 200px;
+    height: 200px;
+  }
 }

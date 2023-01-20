@@ -48,7 +48,6 @@ body {
   font-family: "Poppins", sans-serif;
   height: 100%;
   background-color: #e9c46a;
-
 }
 
 body {
@@ -59,11 +58,11 @@ body {
 
 @keyframes fadeInAnimation {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
   100% {
-      opacity: 1;
-   }
+    opacity: 1;
+  }
 }
 
 main {
@@ -223,6 +222,8 @@ nav > a:hover {
   align-items: center;
   gap: 8px;
   margin-bottom: 48px;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .topic {
@@ -311,4 +312,88 @@ nav > a:hover {
 
 .hard {
   background-image: url(../assets/smiley-x-eyes-fill.svg);
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+
+  header {
+    display: none;
+  }
+
+  main {
+    height: 100%;
+    width: 100%;
+  }
+
+  .wave2,
+  .wave {
+    display: none;
+  }
+
+  .card {
+    position: relative;
+    background-color: #fff;
+    border-radius: 0;
+    padding: 16px;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  .topics-container {
+    margin-bottom: 64px;
+    /* 48 / 64 / 80 / 96 / 128 */
+  }
+
+  .btn-big {
+    position: absolute;
+    bottom: 16px;
+    width: calc(100% - 24px);
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  /* 0 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / */
+  .home-image {
+    display: none;
+  }
+
+  .home-textbox h1 {
+    font-size: 44px;
+    line-height: 1.02;
+    margin-bottom: 24px;
+  }
+
+  .home-textbox p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 32px;
+  }
+
+  .home-textbox {
+    flex-grow: 1;
+    color: var(--blue-color-dark);
+    position: relative;
+    height: 100%;
+    padding: 48px 16px;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 24px);
+    position: absolute;
+    bottom: 24px;
+    height: 66px;
+  }
+
+  .dificulty-seetting:active {
+    transform: scale(1);
+  }
 }

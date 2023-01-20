@@ -4,9 +4,14 @@ const answerElements = document.querySelectorAll(".answer");
 const preferences = JSON.parse(window.localStorage.getItem("quizPreferences"));
 const background = document.querySelector("main");
 const timer = document.getElementById("timer");
+const quizCard = document.querySelector('.card')
+const scoreCard = document.querySelector('.score-card');
+const overallScore = document.getElementById('overall');
+const confirmBtn = document.getElementById('confirm');
 
 let currQuestionIndex = 0;
 let questions;
+let correctAnswers = 0
 
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
@@ -52,6 +57,8 @@ const TIMER_TEMPLATE = `
 </div>
 `;
 
+confirmBtn.addEventListener('click', () => window.location.assign('./categories.html'))
+
 const setCssProperty = (key, value) => {
   document.documentElement.style.setProperty(key, value);
 };
@@ -89,6 +96,12 @@ const setTheme = (topic) => {
   document.body.style.backgroundImage = backgroundUrl;
 };
 
+const onQuizEnd = () => {
+  quizCard.classList.add('d-none');
+  scoreCard.classList.remove('d-none')
+  overallScore.innerHTML = `${correctAnswers}/5`
+}
+
 const resetCorrect = () => {
   answerElements.forEach((answer) => {
     answer.classList.remove("correct", "incorrect");
@@ -102,6 +115,7 @@ const isCorrect = (answerElem) => {
 const onCorrect = (element) => {
   clearInterval(timerInterval);
   element.classList.add("correct");
+  correctAnswers++
   nextQuestion();
 };
 
@@ -115,7 +129,11 @@ const onIncorrect = (element) => {
 };
 
 const loadQuestion = (question) => {
-  if (currQuestionIndex > 4) window.location.assign("./categories.html");
+  if(currQuestionIndex > 4) {
+    onQuizEnd();
+    return
+  }
+   
 
   resetCorrect();
   setTheme(question.category);

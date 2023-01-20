@@ -95,8 +95,6 @@ nav > a:active {
 
 nav > a:hover {
   text-decoration: underline;
-  /* transition-property: border;
-    border-bottom: #2a2a2a 1px solid; */
 }
 
 .spacer {
@@ -119,7 +117,6 @@ nav > a:hover {
   font-weight: 600;
   color: #2a2a2a;
   text-decoration: none;
-  /* padding: 4px 8px; */
 }
 
 .logo > span {
@@ -134,7 +131,6 @@ nav > a:hover {
   padding: 0 48px;
   gap: 48px;
   margin-top: -80px;
-  /* 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / */
 }
 
 .home-textbox h1 {

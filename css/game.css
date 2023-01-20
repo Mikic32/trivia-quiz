@@ -15,7 +15,7 @@ body {
 }
 
 .card {
-  background-color: #121212;
+  background-color: #2a2a2a;
   border-radius: 25px;
   aspect-ratio: 4/3;
   max-width: 1024px;
@@ -24,6 +24,7 @@ body {
   box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -44,7 +45,7 @@ main {
   border: 2px solid var(--accent-color);
   border-radius: 25px;
   box-shadow: 0 0 50px 15px var(--question-shadow);
-  background-color: #242526;
+  background-color: #414141;
   min-width: 900px;
 }
 
@@ -59,7 +60,7 @@ main {
   flex-direction: row;
   width: 100%;
   gap: 12px;
-  margin-top: auto;
+  /* margin-top: auto; */
 }
 
 .solutions-container > * {
@@ -67,7 +68,7 @@ main {
 }
 
 .answer {
-  background-color: #242526;
+  background-color: #414141;
   box-shadow: 0 0 50px 15px var(--answer-shadow);
   border: 2px solid var(--accent-color);
   border-radius: 50px;
@@ -80,12 +81,12 @@ main {
 
 .answer:hover {
   cursor: pointer;
-  background-color: #3a3b3c;
+  background-color: #595959;
   box-shadow: 0 0 50px 15px var(--answer-hover-shadow);
 }
 
 .answer:active {
-  background-color: #202122;
+  background-color: 121212;
   box-shadow: 0 0 50px 15px var(--answer-active-shadow);
 }
 
@@ -97,4 +98,55 @@ main {
 .incorrect, .incorrect:hover {
   background-color: #fa5252 !important;
   box-shadow: 0 0 50px 15px rgba(250, 82, 82, 0.5) !important;
+}
+
+.base-timer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: #121212;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.white {
+  /* color: rgb(65, 184, 131); */
+  color: #fff;
+}
+
+.base-timer__path-remaining.red {
+  color: #f03e3e;
+}
+
+.base-timer__label {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: #fff;
 }
